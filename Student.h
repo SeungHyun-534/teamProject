@@ -1,4 +1,5 @@
-
+#ifndef STUDENT
+#define STUDENT
 typedef struct Student
 {
     char name [20];
@@ -10,3 +11,4 @@ typedef struct Student
 
 } Stu;
 
+#endif
