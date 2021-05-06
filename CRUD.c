@@ -35,3 +35,20 @@ void Update(Stu* arr[]){
     scanf("%f",arr[index]->hw);
     printf("==>수정되었습니다.\n");
 }
+
+int Delete(Stu* arr[],int index){
+    int check;
+    printf("정말로 삭제하시겠습니까?(예 : 1, 아니오 : 2)");
+    scanf("%d",&check);
+
+    if(check == 1){
+        arr[index]->midterm = -1;
+        arr[index]->final = -1;
+        arr[index]->hw = -1;
+        printf("==> 삭제되었습니다.\n");
+    }
+    else if(check == 2){
+        printf("취소되었습니다.\n");
+    }
+    return 1;
+}
