@@ -20,6 +20,14 @@ int Create(Stu* arr[],int index){
 
 }
 
+void Read(Stu* arr[]){
+    for(int i=0;i<sizeof(arr)/sizeof(Stu*);i++){
+        if(arr[i] == NULL) continue;
+        printf("%s %.1f %.1f %.1f %.1f %c",arr[i]->name,arr[i]->midterm,arr[i]->
+        final,arr[i]->hw,arr[i]->grade);
+    }
+}
+
 //함수 내에서 index값을 입력받게 하여 CRUD.h 에서 Update부분 인자값 수정했습니다.
 void Update(Stu* arr[]){
     int index;
