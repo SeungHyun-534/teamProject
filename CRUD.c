@@ -20,10 +20,12 @@ int Create(Stu* arr[],int index){
 
 }
 
-void Read(Stu* arr[]){
+void Read(Stu* arr[]){ //학번은 우리학교처럼 8자리로 생각하고 만들었습니다. 
+    printf("N0. 이름  학번      중간고사 기말고사 과제 성적\n");
+    printf("==============================================\n");
     for(int i=0;i<sizeof(arr)/sizeof(Stu*);i++){
         if(arr[i] == NULL) continue;
-        printf("%s %.1f %.1f %.1f %.1f %c",arr[i]->name,arr[i]->midterm,arr[i]->
+        printf("%2d. %3s %8d %4.1f %4.1f %4.1f %c\n",i+1,arr[i]->name,arr[i]->midterm,arr[i]->
         final,arr[i]->hw,arr[i]->grade);
     }
 }
