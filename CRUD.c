@@ -7,6 +7,8 @@ int Create(Stu* arr[],int index){
 
     printf("학생의 이름을 입력해주세요 :");
     scanf("%s",arr[index]->name);
+    printf("학생의 학번을 입력해주세요 :");
+    scanf("%d",arr[index]->id);
     printf("중간고사 성적 : ");
     scanf("%f",arr[index]->midterm);
     printf("기말고사 성적 : ");
@@ -25,7 +27,7 @@ void Read(Stu* arr[]){ //학번은 우리학교처럼 8자리로 생각하고 만들었습니다.
     printf("==============================================\n");
     for(int i=0;i<sizeof(arr)/sizeof(Stu*);i++){
         if(arr[i] == NULL) continue;
-        printf("%2d. %3s %8d %4.1f %4.1f %4.1f %c\n",i+1,arr[i]->name,arr[i]->midterm,arr[i]->
+        printf("%2d. %3s %8d %4.1f %4.1f %4.1f %c\n",i+1,arr[i]->name,arr[i]->id,arr[i]->midterm,arr[i]->
         final,arr[i]->hw,arr[i]->grade);
     }
 }
@@ -37,6 +39,8 @@ void Update(Stu* arr[]){
     scanf("%d",&index);
     printf("학생의 이름을 입력해주세요 :");
     scanf("%s",arr[index]->name);
+    printf("학생의 학번을 입력해주세요 :"); //저희가 학번을 아예 까먹고 있었네요 ㅎㅎ 모두 추가해서 수정했습니다. 
+    scanf("%d",arr[index]->id);
     printf("중간고사 성적 : ");
     scanf("%f",arr[index]->midterm);
     printf("기말고사 성적 : ");
@@ -52,13 +56,15 @@ int Delete(Stu* arr[],int index){
     scanf("%d",&check);
 
     if(check == 1){
-        arr[index]->midterm = -1;
-        arr[index]->final = -1;
-        arr[index]->hw = -1;
+        free(arr[index]); // 삭제를 동적할당 해제로 변경하였습니다. 확인해주세요
+        arr[index] = NULL;
         printf("==> 삭제되었습니다.\n");
+        return 1;
     }
     else if(check == 2){
         printf("취소되었습니다.\n");
     }
-    return 1;
+
+    return 0; // 삭제가 된 경우에는 1을 , 그렇지 않은 경우에는 0을 리턴하도록 수정(main의 index값을 변경하기 위함)하였습니다.
+    
 }
