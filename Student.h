@@ -3,7 +3,7 @@
 typedef struct Student
 {
     char name [20];
-    int studentNum;
+    int id;
     float midterm;
     float final;
     float hw;
