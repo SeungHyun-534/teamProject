@@ -1,8 +1,9 @@
 #include "CRUD.h"
+#include "Grade.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-int Create(Stu* arr[],int index){
+int Create(int gradeCut[],Stu* arr[],int index){ //예정대로 성적을 주는 함수를 만들었으나 파라미터로 성적컷이 필요해서 C와 U에 파라미터를 변경하였습니다. 
     arr[index] = (Stu*)malloc(sizeof(Stu));
 
     printf("학생의 이름을 입력해주세요 :");
@@ -15,11 +16,9 @@ int Create(Stu* arr[],int index){
     scanf("%f",arr[index]->final);
     printf("과제점수 : ");
     scanf("%f",arr[index]->hw);
+    setGrade(gradeCut,arr,index);
 
     return 1;
-    //grade를 주는 함수를 추후에 만들고 넣을 예정
-    //return 값이 존재하지 않아서 일단 임의로 return값을 넣었습니다. 확인해주세요.
-
 }
 
 void Read(Stu* arr[]){ //학번은 우리학교처럼 8자리로 생각하고 만들었습니다. 
@@ -33,7 +32,7 @@ void Read(Stu* arr[]){ //학번은 우리학교처럼 8자리로 생각하고 만들었습니다.
 }
 
 //함수 내에서 index값을 입력받게 하여 CRUD.h 에서 Update부분 인자값 수정했습니다.
-void Update(Stu* arr[]){
+void Update(int gradeCut[],Stu* arr[]){
     int index;
     printf("수정을 원하는 번호를 입력해주세요 :");
     scanf("%d",&index);
@@ -47,6 +46,7 @@ void Update(Stu* arr[]){
     scanf("%f",arr[index]->final);
     printf("과제점수 : ");
     scanf("%f",arr[index]->hw);
+    setGrade(gradeCut,arr,index);
     printf("==>수정되었습니다.\n");
 }
 
