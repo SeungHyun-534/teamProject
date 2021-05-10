@@ -46,6 +46,10 @@ int main(){
             count -= Delete(sp,index);
         else if (menu == 5){
             setGradeCutline(gradeCut);
+            for(int i=0;i<index;i++){
+                if(sp[i] == NULL) continue;
+                setGrade(gradeCut,sp,i);
+            }
         }
         else if(menu == 6){
             Graph(sp,index);
