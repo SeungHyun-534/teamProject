@@ -5,6 +5,21 @@
 //#include "File.h"
 #include <stdio.h>
 
+int selectMenu(){
+    int menu;
+    printf("\n*** 학생 성적관리 프로그램 ***\n");
+    printf("1. 조회\n");
+    printf("2. 추가\n");
+    printf("3. 수정\n");
+    printf("4. 삭제\n");
+    printf("5. 성적 커트라인 재설정\n");
+    printf("6. 그래프\n");
+    printf("0. 종료\n\n");
+    printf("=> 원하는 메뉴는? ");
+    scanf("%d", &menu);
+    return menu;
+}
+
 int main(){
 
     Stu *sp[20]; int gradeCut[4] = {90,80,70,60};
@@ -18,10 +33,10 @@ int main(){
             if (count ==0) continue;
         if (menu == 1 ){
             if(count > 0)
-                listScore(sp,index);
+                Read(sp,index);
         }
         else if (menu == 2){
-            index += Creat(gradeCut,sp,index);
+            index += Create(gradeCut,sp,index);
             ++ count;
         }
         else if (menu == 3 ){

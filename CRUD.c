@@ -9,22 +9,22 @@ int Create(int gradeCut[],Stu* arr[],int index){ //예정대로 성적을 주는 함수를 �
     printf("학생의 이름을 입력해주세요 :");
     scanf("%s",arr[index]->name);
     printf("학생의 학번을 입력해주세요 :");
-    scanf("%d",arr[index]->id);
+    scanf("%d",&arr[index]->id);
     printf("중간고사 성적 : ");
-    scanf("%f",arr[index]->midterm);
+    scanf("%f",&arr[index]->midterm);
     printf("기말고사 성적 : ");
-    scanf("%f",arr[index]->final);
+    scanf("%f",&arr[index]->final);
     printf("과제점수 : ");
-    scanf("%f",arr[index]->hw);
+    scanf("%f",&arr[index]->hw);
     setGrade(gradeCut,arr,index);
 
     return 1;
 }
 
-void Read(Stu* arr[]){ //학번은 우리학교처럼 8자리로 생각하고 만들었습니다. 
+void Read(Stu* arr[],int index){ //학번은 우리학교처럼 8자리로 생각하고 만들었습니다. 
     printf("N0. 이름  학번      중간고사 기말고사 과제 성적\n");
     printf("==============================================\n");
-    for(int i=0;i<sizeof(arr)/sizeof(Stu*);i++){
+    for(int i=0;i<index;i++){
         if(arr[i] == NULL) continue;
         printf("%2d. %3s %8d %4.1f %4.1f %4.1f %c\n",i+1,arr[i]->name,arr[i]->id,arr[i]->midterm,arr[i]->
         final,arr[i]->hw,arr[i]->grade);
@@ -39,13 +39,13 @@ void Update(int gradeCut[],Stu* arr[]){
     printf("학생의 이름을 입력해주세요 :");
     scanf("%s",arr[index]->name);
     printf("학생의 학번을 입력해주세요 :"); //저희가 학번을 아예 까먹고 있었네요 ㅎㅎ 모두 추가해서 수정했습니다. 
-    scanf("%d",arr[index]->id);
+    scanf("%d",&arr[index]->id);
     printf("중간고사 성적 : ");
-    scanf("%f",arr[index]->midterm);
+    scanf("%f",&arr[index]->midterm);
     printf("기말고사 성적 : ");
-    scanf("%f",arr[index]->final);
+    scanf("%f",&arr[index]->final);
     printf("과제점수 : ");
-    scanf("%f",arr[index]->hw);
+    scanf("%f",&arr[index]->hw);
     setGrade(gradeCut,arr,index);
     printf("==>수정되었습니다.\n");
 }
