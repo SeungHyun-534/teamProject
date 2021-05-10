@@ -48,6 +48,7 @@ int main(){
             Read(sp,index);
             printf("삭제할 번호를 입력해주세요:");
             scanf("%d",&no);
+            --no;
             count -= Delete(sp,no);
         }
         else if (menu == 5){
