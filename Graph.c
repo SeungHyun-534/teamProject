@@ -4,7 +4,7 @@
 void Graph(Stu* arr[], int count){
     char gradeName[5] = {'A','B','C','D','F'};
     int check = 0;
-    printf("\n---¼ºÀû ÀüÃ¼ ÇöÈ²(¸·´ë±×·¡ÇÁ)---\n");
+    printf("\n---ì„±ì  ì „ì²´ í˜„í™©(ë§‰ëŒ€ê·¸ë˜í”„)---\n");
     for(int i=0; i<5; i++){
         for(int j=0; j<count; j++){
             if(gradeName[i] == arr[j]->grade){

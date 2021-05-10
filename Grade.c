@@ -1,7 +1,7 @@
 #include "Grade.h"
 #include  <stdio.h>
 
-//ÇÏ³ªÀÇ µ¥ÀÌÅÍ¿¡ ´ëÇØ¼­¸¸ grade¸¦ Àû¿ëÇÏµµ·Ï ¸¸µé¾î º¸¾Ò½À´Ï´Ù. 
+//í•˜ë‚˜ì˜ ë°ì´í„°ì— ëŒ€í•´ì„œë§Œ gradeë¥¼ ì ìš©í•˜ë„ë¡ ë§Œë“¤ì–´ ë³´ì•˜ìŠµë‹ˆë‹¤. 
 
 void setGrade(int gradeCut[],Stu* arr[],int index){
     int total = arr[index]->midterm + arr[index]->final + arr[index]->hw;
@@ -14,8 +14,8 @@ void setGrade(int gradeCut[],Stu* arr[],int index){
 
 void setGradeCutline(int gradeCut[]){
     for(int i=0;i<4;i++){
-        printf("¸îÁ¡±îÁö %c·Î ÇÏ½Ã°Ú½À´Ï±î?\n",'A'+i);
+        printf("ëª‡ì ê¹Œì§€ %cë¡œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?\n",'A'+i);
         scanf("%d",&gradeCut[i]);
     }
-    printf("Ä¿Æ®¶óÀÎÀÌ Àç¼³Á¤µÇ¾ú½À´Ï´Ù.\n");
+    printf("ì»¤íŠ¸ë¼ì¸ì´ ìž¬ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 }
