@@ -35,8 +35,8 @@ void Read(Stu* arr[],int index){ //학번은 우리학교처럼 8자리로 생�
 void Update(int gradeCut[],Stu* arr[]){
     int index;
     printf("수정을 원하는 번호를 입력해주세요 :");
-    --index;
     scanf("%d",&index);
+    --index;
     printf("학생의 이름을 입력해주세요 :");
     scanf("%s",arr[index]->name);
     printf("학생의 학번을 입력해주세요 :"); //저희가 학번을 아예 까먹고 있었네요 ㅎㅎ 모두 추가해서 수정했습니다. 
