@@ -43,8 +43,13 @@ int main(){
             Read(sp,index);
             Update(gradeCut,sp);
         }
-        else if (menu == 4 )
-            count -= Delete(sp,index);
+        else if (menu == 4 ){
+            int no;
+            Read(sp,index);
+            printf("삭제할 번호를 입력해주세요:");
+            scanf("%d",&no);
+            count -= Delete(sp,no);
+        }
         else if (menu == 5){
             setGradeCutline(gradeCut);
             for(int i=0;i<index;i++){
