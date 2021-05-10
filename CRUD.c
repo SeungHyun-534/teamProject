@@ -22,11 +22,11 @@ int Create(int gradeCut[],Stu* arr[],int index){ //예정대로 성적을 주는 함수를 �
 }
 
 void Read(Stu* arr[],int index){ //학번은 우리학교처럼 8자리로 생각하고 만들었습니다. 
-    printf("N0. 이름  학번      중간고사 기말고사 과제 성적\n");
-    printf("==============================================\n");
+    printf("N0. 이름   학번      중간고사 기말고사 과제 성적\n");
+    printf("===============================================\n");
     for(int i=0;i<index;i++){
         if(arr[i] == NULL) continue;
-        printf("%2d. %3s %8d %4.1f %4.1f %4.1f %c\n",i+1,arr[i]->name,arr[i]->id,arr[i]->midterm,arr[i]->
+        printf("%2d. %3s %8d  %4.1f     %4.1f     %4.1f   %c\n",i+1,arr[i]->name,arr[i]->id,arr[i]->midterm,arr[i]->
         final,arr[i]->hw,arr[i]->grade);
     }
 }
