@@ -40,6 +40,7 @@ int main(){
             ++ count;
         }
         else if (menu == 3 ){
+            Read(sp,index);
             Update(gradeCut,sp);
         }
         else if (menu == 4 )
