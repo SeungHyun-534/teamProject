@@ -17,10 +17,21 @@ void search(Stu* arr[],int count){ //아직 미완성
     switch (no)
     {
     case 1:
-        /* code */
+        searchName(arr,count);
         break;
-    
+    case 2:
+        searchId(arr,count);
+        break;
+    case 3:
+        searchTotal(arr,count);
+        break;
+    case 4:
+        searchGrade(arr,count);
+        break;
+    case 0:
+        return;
     default:
+        printf("잘못된 입력입니다!!! \n 0~4 의 정수를 입력해 주세요.");
         break;
     }
 
