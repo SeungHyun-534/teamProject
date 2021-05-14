@@ -51,3 +51,18 @@ void searchName(Stu* arr[],int count){
             final,arr[i]->hw,arr[i]->grade);
     }
 }
+
+void searchId(Stu* arr[],int count){
+    int id;
+    printf("검색할 학번을 입력해주세요 :");
+    scanf("%d",&id);
+    printf("\n--------------검색 결과-------------\n");
+    printf("N0. 이름   학번      중간고사 기말고사 과제 성적\n");
+    printf("===============================================\n");
+    for(int i=0;i<count;i++){
+        if(arr[i] == NULL) continue;
+        if(arr[i]->id == id)
+            printf("%2d. %3s %8d  %4.1f     %4.1f     %4.1f   %c\n",i+1,arr[i]->name,arr[i]->id,arr[i]->midterm,arr[i]->
+            final,arr[i]->hw,arr[i]->grade);
+    }
+}
