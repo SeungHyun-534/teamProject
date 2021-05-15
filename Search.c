@@ -66,3 +66,37 @@ void searchId(Stu* arr[],int count){
             final,arr[i]->hw,arr[i]->grade);
     }
 }
+
+void searchTotal(Stu* arr[],int count){
+    float low , high ;
+    printf("합산 점수의 하한선을 입력해주세요 :");
+    scanf("%f",&low);
+    printf("합산 점수의 상한선을 입력해주세요 :");
+    scanf("%f",&high);
+    printf("\n--------------검색 결과-------------\n");
+    printf("N0. 이름   학번      중간고사 기말고사 과제 성적\n");
+    printf("===============================================\n");
+    for(int i=0;i<count;i++){
+        if(arr[i] == NULL) continue;
+        float total = arr[i]->midterm +  arr[i]->final + arr[i]->hw;
+        if(total >= low && total <= high)
+            printf("%2d. %3s %8d  %4.1f     %4.1f     %4.1f   %c\n",i+1,arr[i]->name,arr[i]->id,arr[i]->midterm,arr[i]->
+            final,arr[i]->hw,arr[i]->grade);
+    }
+}
+
+void searchGrade(Stu* arr[],int count){
+    char grade;
+    printf("검색할 성적(grade)을 입력해주세요 :");
+    scanf("%c",&grade);
+    getchar();
+    printf("\n--------------검색 결과-------------\n");
+    printf("N0. 이름   학번      중간고사 기말고사 과제 성적\n");
+    printf("===============================================\n");
+    for(int i=0;i<count;i++){
+        if(arr[i] == NULL) continue;
+        if(arr[i]->grade == grade)
+            printf("%2d. %3s %8d  %4.1f     %4.1f     %4.1f   %c\n",i+1,arr[i]->name,arr[i]->id,arr[i]->midterm,arr[i]->
+            final,arr[i]->hw,arr[i]->grade);
+    }
+}
