@@ -88,6 +88,7 @@ void searchTotal(Stu* arr[],int count){
 void searchGrade(Stu* arr[],int count){
     char grade;
     printf("검색할 성적(grade)을 입력해주세요 :");
+    getchar();
     scanf("%c",&grade);
     getchar();
     printf("\n--------------검색 결과-------------\n");

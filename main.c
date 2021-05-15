@@ -14,7 +14,7 @@ int selectMenu(){
     printf("4. 삭제\n");
     printf("5. 성적 커트라인 재설정\n");
     printf("6. 그래프\n");
-    printf("7.검색하기\n");
+    printf("7. 검색하기\n");
     printf("0. 종료\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
