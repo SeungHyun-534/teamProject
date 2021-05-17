@@ -1,4 +1,4 @@
 #include "Student.h"
-
+#include "stdlib.h"
 int load(Stu* arr[]);
-int save(Stu* arr[], int count);
+void save(Stu* arr[], int count);

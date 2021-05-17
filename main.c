@@ -2,7 +2,7 @@
 #include "CRUD.h"
 #include "Graph.h"
 #include "Search.h"
-//#include "File.h"
+#include "File.h"
 #include <stdio.h>
 
 int selectMenu(){
@@ -28,6 +28,11 @@ int main(){
     int count = 0,index =0,
         menu;
  
+
+    count = load(sp);
+    index = count;
+
+
     while (1){
         menu = selectMenu();
         if (menu == 0) break;
@@ -67,7 +72,7 @@ int main(){
             search(sp,index);
         }
         else if(menu == 8){
-
+            save(sp,index);
         }
     }
     printf("종료됨!\n");
